@@ -20,7 +20,7 @@ set autoindent
 set shiftround
 
 set wildmenu
-set wildmode=longset:full
+set wildmode=longest:full
 
 if has('win32') || has('win64')
   set termencoding=cp932
