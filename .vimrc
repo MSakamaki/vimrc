@@ -1,15 +1,20 @@
 set nocompatible
 
-set nu
-
+set number
+set autoindent
+set list
+set listchars=tab:^\ ,trail:~
+set hlsearch
+set nowritebackup
+set nobackup
 set hidden
 set noswapfile
 set noundofile
 syntax enable
 set browsedir=buffer
 set modeline
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set shiftround
@@ -24,3 +29,20 @@ else
 endif
 
 "set encoding=utf-8
+
+filetype off 
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+    call neobundle#rc(expand('~/.vim/bundle'))
+endif
+
+" ここにインストールしたいプラグインのリストを書く
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'Align'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'Shougo/neocomplcache'
+
+filetype plugin on
+filetype indent on
