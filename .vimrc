@@ -1,6 +1,6 @@
 set nocompatible
 
-set number
+set nu
 set autoindent
 set list
 set listchars=tab:^\ ,trail:~
