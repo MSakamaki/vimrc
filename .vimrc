@@ -108,6 +108,17 @@ NeoBundle 'Townk/vim-autoclose' " 閉じカッコを自動化
 NeoBundle 'vim-scripts/textmanip.vim' " 選択したテキストの移動 
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun' 
+NeoBundle "osyo-manga/shabadou.vim"
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 
 
 " プラグイン毎の設定
@@ -129,5 +140,23 @@ NeoBundleCheck
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
+
+"-------------------------
+" Start QuickRunConfig
+"-------------------------
+let g:quickrun_config = {
+\   "_" : {
+\     "runner" : "vimproc",
+\     "runner/vimproc/updatetime" : 40,
+\     "outputter/buffer/split" : ":botright 8sp",
+\   },
+\   "javascript/node" : {
+\     "command": "node",
+\   }
+\}
+"-------------------------
+" End QuickRunConfig
+"-------------------------
+
 
 syntax on
