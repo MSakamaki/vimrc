@@ -1,3 +1,10 @@
+" Line Memo
+"
+" 102 : NeoBundle
+" 132 : Plugin Setting
+" 160 : QuickRunConfig Setting
+"
+
 
 set nu
 set paste
@@ -110,6 +117,7 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun' 
 NeoBundle "osyo-manga/shabadou.vim"
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'suan/vim-instant-markdown' " markdown ライブリロード
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -126,6 +134,11 @@ NeoBundle 'Shougo/vimproc.vim', {
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 " インデントを設定
 autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+" vim-instant-markdown 設定
+set shell=bash\ -i
+" let g:instant_markdown_slow = 1
+let g:instant_markdown_autostart = 1 " マークダウンプレビュー自動起動
+
 
 
 call neobundle#end()
